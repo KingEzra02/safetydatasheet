@@ -91,3 +91,161 @@ footer {
   margin: 5px;
   font-size: 14px;
 }
+
+/* ========== MOBILE-FIRST BASE STYLES ========== */
+/* (These styles apply to all screen sizes) */
+
+/* Your existing styles remain here */
+
+/* ========== MEDIA QUERIES ========== */
+
+/* Small tablets (600px and up) */
+@media (min-width: 600px) {
+  .main-container {
+    margin-inline: 30px;
+    padding: 30px;
+  }
+
+  .info-sheet {
+    padding: 25px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Large tablets and small laptops (768px and up) */
+@media (min-width: 768px) {
+  .main-container {
+    grid-template-columns: repeat(2, 1fr);
+    margin-inline: 50px;
+  }
+
+  header {
+    padding: 0 20px;
+  }
+
+  .logo {
+    width: 120px;
+  }
+
+  .info-sheet {
+    min-height: 400px;
+  }
+
+  .info-sheet i {
+    font-size: 60px;
+  }
+}
+
+/* Laptops and desktops (992px and up) */
+@media (min-width: 992px) {
+  .main-container {
+    grid-template-columns: repeat(3, 1fr);
+    margin-inline: 80px;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  .info-sheet {
+    padding: 30px;
+  }
+
+  .learn-more button {
+    padding: 10px 20px;
+  }
+}
+
+/* Large desktops (1200px and up) */
+@media (min-width: 1200px) {
+  .main-container {
+    max-width: 1400px;
+    margin: 50px auto;
+  }
+
+  header {
+    padding: 0 50px;
+  }
+
+  .info-sheet {
+    transition: transform 0.3s ease;
+  }
+
+  .info-sheet:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* ========== SPECIAL CASES ========== */
+
+/* Very small mobile devices (400px and below) */
+@media (max-width: 400px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .main-container {
+    margin-inline: 15px;
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .info-sheet i {
+    font-size: 40px;
+  }
+
+  .learn-more a {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+/* Landscape orientation on mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .main-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .info-sheet {
+    min-height: 300px;
+  }
+}
+
+/* Print styles */
+@media print {
+  body {
+    background-color: white;
+    color: black;
+    font-size: 12pt;
+  }
+
+  .main-container {
+    border: none;
+    padding: 0;
+    margin: 0;
+    grid-template-columns: 1fr;
+  }
+
+  .info-sheet {
+    page-break-inside: avoid;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+  }
+
+  .learn-more,
+  .social-icons {
+    display: none;
+  }
+
+  footer {
+    background-color: white;
+    color: black;
+    border-top: 1px solid #000;
+  }
+}
